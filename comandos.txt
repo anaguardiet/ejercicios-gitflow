@@ -1,0 +1,20 @@
+1) ssh-keygen -t rsa -b 4096 -C "guardietana@gmail.com"
+eval "$(ssh-agent -s)" 
+ssh-add ~/.ssh/id_rsa
+2) git remote add origin git@github.com:anaguardiet/ejercicios-gitflow.git
+3) git branch -M master
+git push origin master
+4) git tag -d $(git tag)
+5) git tag -a v1.0 a049934468557082740085da11b5f5fe8a59de3f -m "Versión 1.0"
+6) git push origin v1.0
+7) git checkout -b develop
+git push origin develop
+8) git checkout -b feature
+nano holamundo.py
+9) git checkout -b hotfix/v1.1
+find . -type f -exec sed -i 's/git/GIT/g' {} +
+git tag -a v1.1 af0af8ae9e5e0548db7f1db3e65587ef931cb9df -m "Versión 1.1"
+git checkout develop
+git merge hotfix/v1.1
+10) git checkout main
+git tag -a v2.0 af0af8ae9e5e0548db7f1db3e65587ef931cb9df -m "Versión 2.0"
